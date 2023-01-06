@@ -26,7 +26,8 @@ desc pet;
 drop table pet;
 show tables;
 
--- insert: DML(C)
+-- insert: DML (C)
 insert into pet values(
 'ㄹㄹ', 'me', 'dog', 'm', '2000-12-12', null
 );
+
