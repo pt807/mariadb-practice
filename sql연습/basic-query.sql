@@ -1,7 +1,6 @@
 show databases;
 use webdb;
 
-
 -- 대소문자 구분 안한다.
 sElect version(), current_date(), nOw() from dual;
 
@@ -26,11 +25,21 @@ desc pet;
 drop table pet;
 show tables;
 
--- insert: DML (C)
+-- insert: DML(C)
 insert into pet values(
 'ㄹㄹ', 'me', 'dog', 'm', '2000-12-12', null
 );
-
+-- select: DML(R)
 select * from pet;
+-- update: DML(U)
+update pet set name='ddog' where name = 'dd';
+-- delete: DML(D)
+delete from pet where name='ddog';
 
-delete from pet where name='ㄹㄹ';
+-- load data
+load data local infile 'd:\pet.txt' into table pet;
+
+-- select
+select name, gender from pet where name = 'bowser';
+
+
