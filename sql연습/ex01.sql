@@ -31,3 +31,6 @@ insert into pet values(
 'ㄹㄹ', 'me', 'dog', 'm', '2000-12-12', null
 );
 
+select * from pet;
+
+delete from pet where name='ㄹㄹ';
