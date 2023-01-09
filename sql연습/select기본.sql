@@ -83,6 +83,7 @@ where gender = 'm'
 order by 입사일 asc;
 
 -- 예제4 : 직원들의 사번 월급을 사번(asc), 월급은(desc)
-select emp_no, salary, from_date, to_date
+select emp_no, salary + salary * 0.7, from_date, to_date
 from salaries
-order by emp_no asc, salary desc; 
+order by emp_no asc, salary + salary * 0.7 desc;
+
