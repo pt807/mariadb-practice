@@ -36,3 +36,8 @@ select
  YEAR(now()) - max(YEAR(birth_date)) as '최고 어린 사원',
  YEAR(now()) - min(YEAR(birth_date)) as '최 연장자'
 from employees;
+
+select 
+ round((to_days(now()) - to_days(max(birth_date))) / 365) as '최고 어린 사원',
+ round((to_days(now()) - to_days(min(birth_date))) / 365) as '최 연장자'
+from employees;
