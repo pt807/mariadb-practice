@@ -87,3 +87,4 @@ select emp_no, salary + salary * 0.7, from_date, to_date
 from salaries
 order by emp_no asc, salary + salary * 0.7 desc;
 
+
