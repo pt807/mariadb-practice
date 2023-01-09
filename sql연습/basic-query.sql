@@ -29,10 +29,14 @@ show tables;
 insert into pet values(
 'ㄹㄹ', 'me', 'dog', 'm', '2000-12-12', null
 );
+
 -- select: DML(R)
 select * from pet;
+
 -- update: DML(U)
 update pet set name='ddog' where name = 'dd';
+update pet set death=null where name != 'bowger';
+
 -- delete: DML(D)
 delete from pet where name='ddog';
 
