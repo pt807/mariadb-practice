@@ -22,7 +22,10 @@ public class BookDao {
 		try {
 			conn = getConnection();
 
-			String sql = "select no, title, rent, author_no from book order by no asc";
+			String sql = "select a.no, a.title, a.rent, b.name as authorName" +
+						 " from book a, author b" +
+						 " where a.author_no = b.no" +
+						 " order by no asc";
 			pstmt = conn.prepareStatement(sql);
 
 			rs = pstmt.executeQuery();
@@ -31,7 +34,7 @@ public class BookDao {
 				vo.setNo(rs.getLong(1));
 				vo.setTitle(rs.getString(2));
 				vo.setRent(rs.getString(3));
-				vo.setAuthor_no(rs.getLong(4));
+				vo.setAuthorName(rs.getString(4));
 
 				result.add(vo);
 			}

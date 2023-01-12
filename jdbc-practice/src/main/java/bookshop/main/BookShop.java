@@ -30,7 +30,7 @@ public class BookShop {
 		for(BookVo vo : list) {
 			System.out.println("책 번호" + vo.getNo() + 
 					           ", 책 제목:" + vo.getTitle() + 
-					           ", 작가:" + vo.getAuthor_no() + 
+					           ", 작가:" + vo.getAuthorName() + 
 					           ", 대여 유무:" + (vo.getRent().equals("Y") ? "대여중" : "재고있음"));
 
 		}
