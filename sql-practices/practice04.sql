@@ -5,7 +5,8 @@
 select count(*)
 from salaries
 where to_date ='9999-01-01' and salary > (select avg(salary)
-										  from salaries);
+										  from salaries
+                                          where to_date ='9999-01-01');
 
 -- 문제2.(x)
 -- 현재, 각 부서별로 최고의 급여를 받는 사원의 사번, 이름, 급여를 조회하세요. 단
@@ -36,6 +37,25 @@ select a.emp_no, a.first_name, d.first_name, e.dept_name
 from employees a join dept_emp b join dept_manager c join employees d join departments e
 on a.emp_no = b.emp_no and b.dept_no = c.dept_no and d.emp_no = d.emp_no and c.dept_no = e.dept_no
 where b.to_date = '9999-01-01' and c.to_date = '9999-01-01';
+
+SELECT 
+    a.emp_no,
+    CONCAT(a.first_name, ' ', a.last_name) as name,
+    CONCAT(d.first_name, ' ', d.last_name) as manage_name,
+    e.dept_name
+FROM
+    employees a,
+    dept_emp b,
+    dept_manager c,
+    employees d,
+    departments e
+WHERE
+    a.emp_no = b.emp_no
+        AND b.dept_no = c.dept_no
+        AND d.emp_no = d.emp_no
+        AND c.dept_no = e.dept_no
+        AND b.to_date = '9999-01-01'
+        AND c.to_date = '9999-01-01';
 
 -- 문제5.
 -- 현재, 평균급여가 가장 높은 부서의 사원들의 사번, 이름, 직책, 급여를 조회하고 급여순으로 출력하세요.
