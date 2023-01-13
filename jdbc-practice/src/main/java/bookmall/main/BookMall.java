@@ -167,14 +167,14 @@ public class BookMall {
 		OrdersDao dao = new OrdersDao();
 
 		vo = new OrdersVo();
-		vo.setOrderNo(1);
+		vo.setOrderNo(2023001);
 		vo.setPrice(30000);
 		vo.setAddress("부산광역시 연제구");
 		vo.setUser_no(1);
 		dao.insert(vo);
 
 		vo = new OrdersVo();
-		vo.setOrderNo(2);
+		vo.setOrderNo(2023002);
 		vo.setPrice(66000);
 		vo.setAddress("부산광역시 수영구");
 		vo.setUser_no(2);
@@ -186,6 +186,7 @@ public class BookMall {
 		List<OrdersVo> list = new OrdersDao().findAll();
 		for (OrdersVo vo : list) {
 			System.out.println(vo.getNo() + 
+							   ", 주문번호: " + vo.getOrderNo() +
 							   ", 이름: " + vo.getUser_name() + 
 							   ", 이메일: " + vo.getUser_email() + 
 							   ", 가격: " + vo.getPrice() +

@@ -21,7 +21,7 @@ public class OrdersDao {
 		try {
 			conn = getConnection();
 
-			String sql = "select a.no, b.name, b.email, a.price, a.address " 
+			String sql = "select a.no, a.orderNo, b.name, b.email, a.price, a.address " 
 					  + " from orders a, user b "
 					  + " where a.user_no = b.no order by a.no";
 			pstmt = conn.prepareStatement(sql);
@@ -30,10 +30,11 @@ public class OrdersDao {
 			while (rs.next()) {
 				OrdersVo vo = new OrdersVo();
 				vo.setNo(rs.getLong(1));
-				vo.setUser_name(rs.getString(2));
-				vo.setUser_email(rs.getString(3));
-				vo.setPrice(rs.getInt(4));
-				vo.setAddress(rs.getString(5));
+				vo.setOrderNo(rs.getInt(2));
+				vo.setUser_name(rs.getString(3));
+				vo.setUser_email(rs.getString(4));
+				vo.setPrice(rs.getInt(5));
+				vo.setAddress(rs.getString(6));
 
 				result.add(vo);
 			}
