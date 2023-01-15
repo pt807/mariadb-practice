@@ -173,12 +173,12 @@ public class BookMall {
 		vo.setUser_no(1);
 		dao.insert(vo);
 
-		vo = new OrdersVo();
-		vo.setOrderNo(2023002);
-		vo.setPrice(66000);
-		vo.setAddress("부산광역시 수영구");
-		vo.setUser_no(2);
-		dao.insert(vo);
+//		vo = new OrdersVo();
+//		vo.setOrderNo(2023002);
+//		vo.setPrice(66000);
+//		vo.setAddress("부산광역시 수영구");
+//		vo.setUser_no(2);
+//		dao.insert(vo);
 
 	}
 
@@ -207,7 +207,7 @@ public class BookMall {
 		vo = new Order_BookVo();
 		vo.setBookcount(4);
 		vo.setBook_no(3);
-		vo.setOrders_no(2);
+		vo.setOrders_no(1);
 		dao.insert(vo);
 
 	}
